@@ -1,0 +1,19 @@
+#loadMore {
+    padding-bottom: 30px;
+    padding-top: 30px;
+    text-align: center;
+    width: 100%;
+}
+#loadMore a {
+    background: rgb(33, 130, 187);
+    border-radius: 3px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 30px;
+    transition: all 0.25s ease-out;
+    -webkit-font-smoothing: antialiased;
+}
+#loadMore a:hover {
+    background-color: #3c69ad;
+}

@@ -21,11 +21,8 @@
                                 <th style="width: 10%">Avatar</th>
                                 <th style="width: 30%">Name</th>
                                 <th>Username</th>
-                                <th>Mobile</th>
+                                <th>Phone</th>
                                 <th>Email</th>
-                                <th style="width: 8%" class="text-center">Type</th>
-                                <th style="width: 8%" class="text-center">Score</th>
-                                <th style="width: 30%">Limit</th>
                                 <th style="width: 30%">Reset</th>
                                 <th style="width: 30%"></th>
                             </tr>
@@ -39,13 +36,8 @@
                                         <a href="{{ route('admin.users.edit', $user->id) }}">{{ $user->name }}</a>
                                     </td>
                                     <td class="project_progress"><a>{{ $user->username }}</a></td>
-                                    <td class="project_progress"><a>{{ $user->mobile }}</a></td>
+                                    <td class="project_progress"><a>{{ $user->phone }}</a></td>
                                     <td class="project_progress"><a>{{ $user->email }}</a></td>
-                                    <td class="project-state">
-                                        <span class="badge badge-success">{{ $user->type }}</span>
-                                    </td>
-                                    <td class="project_progress"><a>{{ $user->credit_score }}</a></td>
-                                    <td class="project_progress"><a>{{ formatAmount($user->credit_limit) }}</a></td>
                                     <td class="project_progress">
                                         <a href="{{ route('admin.users.reset', $user->id) }}" class="btn btn-sm btn-block btn-primary mb-2">Reset</a></td>
                                     <td class="project-actions text-right">
