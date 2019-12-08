@@ -51,14 +51,6 @@
                     </li>                    
                 @endcan
                 <li class="nav-item">
-                    <a href="{{ route('admin.applications.index') }}" class="nav-link {{ Route::currentRouteName() == 'admin.applications.index' ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-user-plus"></i>
-                        <p>
-                        {{ __('Applications') }}
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a href="{{ route('admin.users.index') }}" class="nav-link {{ Route::currentRouteName() == 'admin.users.index' ? 'active' : '' }}">
                         <i class="nav-icon fa fa-users"></i>
                         <p>
@@ -67,50 +59,18 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.products.index') }}" class="nav-link {{ Route::currentRouteName() == 'admin.products.index' ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-shopping-cart"></i>
+                    <a href="{{ route('admin.subscribers.index') }}" class="nav-link {{ Route::currentRouteName() == 'admin.subscribers.index' ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-user-plus"></i>
                         <p>
-                        {{ __('Products') }}
+                        {{ __('Subscribers') }}
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.orders.index') }}" class="nav-link {{ Route::currentRouteName() == 'admin.orders.index' ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-question-circle"></i>
+                    <a href="{{ route('admin.categories.index') }}" class="nav-link {{ Route::currentRouteName() == 'admin.categories.index' ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-tags"></i>
                         <p>
-                        {{ __('Orders') }}
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('admin.packages.index') }}" class="nav-link {{ Route::currentRouteName() == 'admin.packages.index' ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-cubes"></i>
-                        <p>
-                        {{ __('Packages') }}
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('admin.slots.index') }}" class="nav-link {{ Route::currentRouteName() == 'admin.slots.index' ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-random"></i>
-                        <p>
-                        {{ __('Positions') }}
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('admin.payments.index') }}" class="nav-link {{ Route::currentRouteName() == 'admin.payments.index' ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-credit-card"></i>
-                        <p>
-                        {{ __('Payments') }}
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('admin.payouts.index') }}" class="nav-link {{ Route::currentRouteName() == 'admin.payouts.index' ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-heart"></i>
-                        <p>
-                        {{ __('Payouts') }}
+                        {{ __('Categories') }}
                         </p>
                     </a>
                 </li>

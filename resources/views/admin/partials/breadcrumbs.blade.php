@@ -31,12 +31,6 @@
                           @break
 
 
-                        @case('admin.applications.index')
-                          <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                          <li class="breadcrumb-item"><a>Applications</a></li>                            
-                          @break
-
-
                         @case('admin.users.index')
                           <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
                           <li class="breadcrumb-item"><a>Users</a></li>                            
@@ -52,70 +46,25 @@
                           <li class="breadcrumb-item"><a>Edit</a></li>                            
                           @break
 
-
-                        @case('admin.products.index')
+                        @case('admin.subscribers.index')
                           <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                          <li class="breadcrumb-item"><a>Products</a></li>                            
+                          <li class="breadcrumb-item"><a>Subscribers</a></li>                            
                           @break
-                        @case('admin.products.create')
+
+
+                        @case('admin.categories.index')
                           <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                          <li class="breadcrumb-item"><a href="{{ route('admin.products.index') }}">Products</a></li>
+                          <li class="breadcrumb-item"><a>Categories</a></li>                            
+                          @break
+                        @case('admin.categories.create')
+                          <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                          <li class="breadcrumb-item"><a href="{{ route('admin.categories.index') }}">Categories</a></li>
                           <li class="breadcrumb-item"><a>Create</a></li>                            
                           @break
-                        @case('admin.products.edit')
+                        @case('admin.categories.edit')
                           <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                          <li class="breadcrumb-item"><a href="{{ route('admin.products.index') }}">Products</a></li>
+                          <li class="breadcrumb-item"><a href="{{ route('admin.categories.index') }}">Categories</a></li>
                           <li class="breadcrumb-item"><a>Edit</a></li>                            
-                          @break
-
-
-                        @case('admin.orders.index')
-                          <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                          <li class="breadcrumb-item"><a>Orders</a></li>                            
-                          @break
-                        @case('admin.orders.create')
-                          <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                          <li class="breadcrumb-item"><a href="{{ route('admin.orders.index') }}">Orders</a></li>
-                          <li class="breadcrumb-item"><a>Create</a></li>                            
-                          @break
-                        @case('admin.orders.edit')
-                          <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                          <li class="breadcrumb-item"><a href="{{ route('admin.orders.index') }}">Orders</a></li>
-                          <li class="breadcrumb-item"><a>Edit</a></li>                            
-                          @break
-
-
-                        @case('admin.packages.index')
-                          <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                          <li class="breadcrumb-item"><a>Packages</a></li>                            
-                          @break
-                        @case('admin.packages.create')
-                          <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                          <li class="breadcrumb-item"><a href="{{ route('admin.packages.index') }}">Packages</a></li>
-                          <li class="breadcrumb-item"><a>Create</a></li>                            
-                          @break
-                        @case('admin.packages.edit')
-                          <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                          <li class="breadcrumb-item"><a href="{{ route('admin.packages.index') }}">Packages</a></li>
-                          <li class="breadcrumb-item"><a>Edit</a></li>                            
-                          @break
-
-
-                        @case('admin.slots.index')
-                          <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                          <li class="breadcrumb-item"><a>Positions</a></li>                            
-                          @break
-
-
-                        @case('admin.payments.index')
-                          <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                          <li class="breadcrumb-item"><a>Payments</a></li>                            
-                          @break
-
-
-                        @case('admin.payouts.index')
-                          <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                          <li class="breadcrumb-item"><a>Payouts</a></li>                            
                           @break
 
 

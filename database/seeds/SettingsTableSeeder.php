@@ -8,30 +8,26 @@ class SettingsTableSeeder extends Seeder
     /**
      * @var array
      */
-    protected $settings = [ 
+    protected $settings = [
         [
             'key'                       =>  'site_name',
-            'value'                     =>  'ChiMony And Friends',
+            'value'                     =>  'Kobu Innovative Solutions',
         ],
         [
             'key'                       =>  'site_title',
-            'value'                     =>  'ChiMony',
+            'value'                     =>  'BrainStaq',
         ],
         [
             'key'                       =>  'site_admin',
-            'value'                     =>  'ChiMony Admin',
+            'value'                     =>  'BrainStaq Admin',
         ],
         [
             'key'                       =>  'domain_name',
-            'value'                     =>  'ChiMony.com',
+            'value'                     =>  'brainstaq.com',
         ],
         [
             'key'                       =>  'default_email_address',
-            'value'                     =>  'chimoneyng@gmail.com',
-        ],
-        [
-            'key'                       =>  'contact_email_address', // 
-            'value'                     =>  'contact@chimony.com',
+            'value'                     =>  'brainstaq@gmail.com',
         ],
         [
             'key'                       =>  'currency_code',
@@ -55,15 +51,15 @@ class SettingsTableSeeder extends Seeder
         ],
         [
             'key'                       =>  'seo_meta_title',
-            'value'                     =>  'ChiMony And Friends',
+            'value'                     =>  '',
         ],
         [
             'key'                       =>  'seo_meta_keywords',
-            'value'                     =>  'osusu, collections, chinyere, osuoha, chimoney, chimony, savings, money',
+            'value'                     =>  '',
         ],
         [
             'key'                       =>  'seo_meta_description',
-            'value'                     =>  'ChiMony.com is a private platform to manage collections between                                       Madam Chinyere and her friends.',
+            'value'                     =>  '',
         ],
         [
             'key'                       =>  'social_facebook',
@@ -89,41 +85,37 @@ class SettingsTableSeeder extends Seeder
             'key'                       =>  'facebook_pixels',
             'value'                     =>  '',
         ],
-        [
-            'key'                       =>  'auto_approve', //
-            'value'                     =>  'on',
-        ],
 
 
         [
             'key'                       =>  'sms_token',
-            'value'                     =>  'kQd0NbGTnNO42KF6ldZKSOxF8oFSUjZyygEkUzqMeBn6hEaCqN9NUwT4FHHd',
+            'value'                     =>  '',
         ],
         [
             'key'                       =>  'sms_sender',
-            'value'                     =>  'ChiMony',
+            'value'                     =>  'BrainStaq',
         ],
 
-        
+
         [
             'key'                       =>  'default_payment_method',
             'value'                     =>  '',
         ],
         [
             'key'                       =>  'default_bank_name', //
-            'value'                     =>  'First Bank of Nigeria',
+            'value'                     =>  '',
         ],
         [
             'key'                       =>  'default_account_name', //
-            'value'                     =>  'Osuoha Chinyere O.',
+            'value'                     =>  '',
         ],
         [
             'key'                       =>  'default_account_number', //
-            'value'                     =>  '3043931919',
+            'value'                     =>  '',
         ],
         [
             'key'                       =>  'default_account_type', //
-            'value'                     =>  'Savings',
+            'value'                     =>  '',
         ],
 
 
@@ -152,7 +144,7 @@ class SettingsTableSeeder extends Seeder
             'value'                     =>  '',
         ],
     ];
-    
+
     /**
      * Run the database seeds.
      *
@@ -160,14 +152,13 @@ class SettingsTableSeeder extends Seeder
      */
     public function run()
     {
-        foreach ($this->settings as $index => $setting)
-        {
+        foreach ($this->settings as $index => $setting) {
             $result = Setting::create($setting);
             if (!$result) {
                 $this->command->info("Insert failed at record $index.");
                 return;
             }
         }
-        $this->command->info('Inserted '.count($this->settings). ' records');
+        $this->command->info('Inserted ' . count($this->settings) . ' records');
     }
 }

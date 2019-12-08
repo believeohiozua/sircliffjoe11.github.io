@@ -15,7 +15,8 @@ use App\Http\Controllers\BaseController;
 
 class DashboardController extends BaseController
 {
-    public function __construct(){
+    public function __construct()
+    {
         $this->middleware('auth:admin')->except('index');
     }
 
@@ -26,24 +27,12 @@ class DashboardController extends BaseController
         }
 
         $totalAdmins = Admin::all()->count();
-        $totalApplications = Application::where('status', 0)->get()->count();
         $totalUsers = User::all()->count();
-        $totalProducts = Product::all()->count();
-        $totalPackages = Package::all();
-        $activePackages = $totalPackages->where('status', 1)->count();
-        $pendingPayments = Payment::where('status', 0)->get();
-        $pendingPayouts = Payout::where('status', 0)->get();
-        
-        $this->setPageTitle('Dashboard', 'Welcome '.Auth::guard('admin')->user()->name .'!');
+
+        $this->setPageTitle('Dashboard', 'Welcome ' . Auth::guard('admin')->user()->name . '!');
         return view('admin.dashboard.index', compact(
             'totalAdmins',
-            'totalApplications',
             'totalUsers',
-            'totalProducts',
-            'totalPackages',
-            'activePackages',
-            'pendingPayments',
-            'pendingPayouts'
         ));
     }
 }
