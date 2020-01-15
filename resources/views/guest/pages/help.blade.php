@@ -10,9 +10,19 @@
     <hr style="length: 10%;">
     <p style="font-weight: bold;">Can I participate without registering?</p>
             <p>If you are not logged in, you can only read ideas and vote for them. 
-                To publish ideas, comments and participate in Campaigns, you need to <a href="{{ route('login') }}">log in.</a></p> 
+                To publish ideas, comments and participate in Campaigns, you need to
+                @if (Auth::check())
+                    <a href="{{ route('home') }}">log in.</a></p>
+                @else
+                    <a href="{{ route('login') }}">log in.</a></p>
+                @endif
 
-            <p>And if you don't yet have an account, click on <a href="{{ route('register') }}">Register,</a> it’s simple and quick.</p>
+            <p>And if you don't yet have an account, click on
+                @if (Auth::check())
+                    <a href="{{ route('home') }}">Register,</a> it’s simple and quick.</p>
+                @else
+                    <a href="{{ route('register') }}">Register,</a> it’s simple and quick.</p>
+                @endif
 
             <p style="font-weight: bold;">I haven’t received the confirmation email for my new account.</p>
             <p>This can be for several reasons:</p>

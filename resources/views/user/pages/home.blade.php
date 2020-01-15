@@ -1,4 +1,4 @@
-@extends('layouts.member-master')
+@extends('layouts.user-master')
 @section('title', 'Brainstaq | Welcome')
 
 @section('content')
@@ -15,7 +15,7 @@
                         </div>
                     @endif
 
-                       Welcome, {{ Auth::user()->name }} <a href="{{ route('profile') }}">Go to your Profile</a>
+                       Welcome, {{ Auth::user()->name }} <a href="{{ route ('profile') }}">Go to your Profile</a>
                 </div>
             </div>
         </div>

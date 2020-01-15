@@ -1,4 +1,4 @@
-@extends('layouts.member-master')
+@extends('layouts.user-master')
 @section('title', 'Brainstaq | Create Campaign')
 
 
@@ -144,7 +144,7 @@
                                   <option value="1">Zambian kwacha</option>
                                   <option value="1">RTGS Dollar</option>
             </select><br>
-            <a href="{{ route('new-campaign') }}"><button type="button" class="btn btn-primary">Start Campaign</button></a>
+            <a href="{{ route('campaigns.create') }}"><button type="button" class="btn btn-primary">Start Campaign</button></a>
             
 </div>
 

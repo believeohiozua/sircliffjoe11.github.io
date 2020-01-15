@@ -48,52 +48,35 @@ Route::view('countries', 'guest.pages.countries')->name('countries');
 | User Web Routes
 |--------------------------------------------------------------------------
 |
- */
-
+ */ 
 
 // Route::get('/', 'User\DashboardController@index')->name('welcome');
 
-// Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/home', 'User\UserController@index')->name('home');
 
-//     Route::prefix('profile')->group(function () {
-//         Route::get('/', 'User\ProfileController@create')->name('profile.create');
-//         Route::post('/', 'User\ProfileController@store')->name('profile.store');
-//         Route::get('update', 'User\ProfileController@edit')->name('profile.edit');
-//         Route::post('update-avatar', 'User\ProfileController@updateAvatar')->name('profile.update-avatar');
-//         Route::post('update-personal', 'User\ProfileController@updatePersonal')->name('profile.update-personal');
-//         Route::post('update-password', 'User\ProfileController@updatePassword')->name('profile.update-password');
-//     });
+    Route::get('/profile', 'User\UserController@profile')->name('profile');
+    Route::get('/edit-profile', 'User\UserController@edit')->name('edit');
 
-//     Route::prefix('orders')->group(function () {
-//         Route::get('/', 'User\OrderController@index')->name('order.index');
-//         Route::get('create', 'User\OrderController@create')->name('order.create');
-//         Route::post('create', 'User\OrderController@store')->name('order.store');
-//     });
+    Route::prefix('ideas')->group(function () {
+        Route::get('/', 'User\IdeaController@index')->name('ideas.index');
+        Route::get('/create', 'User\IdeaController@create')->name('ideas.create');
+        Route::post('/store', 'User\IdeaController@store')->name('ideas.store');
+        Route::get('/{id}/show', 'User\IdeaController@show')->name('ideas.show');
+        Route::get('/{id}/edit', 'User\IdeaController@edit')->name('ideas.edit');
+        Route::post('/update', 'User\IdeaController@update')->name('ideas.update');
+        Route::get('/{id}/delete', 'User\IdeaController@delete')->name('ideas.delete');
+    });
 
-//     Route::prefix('payments')->group(function () {
-//         Route::get('/', 'User\PaymentController@index')->name('payments.index');
-//         Route::post('submit-proof', 'User\PaymentController@update')->name('payments.update');
-//     });
+    Route::prefix('campaigns')->group(function () {
+        Route::get('/', 'User\CampaignController@index')->name('campaigns.index');
+        Route::get('/create', 'User\CampaignController@create')->name('campaigns.create');
+        Route::post('/store', 'User\CampaignController@store')->name('campaigns.store');
+        Route::get('/{id}/show', 'User\CampaignController@show')->name('campaigns.show');
+        Route::get('/{id}/edit', 'User\CampaignController@edit')->name('campaigns.edit');
+        Route::post('/update', 'User\CampaignController@update')->name('campaigns.update');
+        Route::get('/{id}/delete', 'User\CampaignController@delete')->name('campaigns.delete');
+    });
 
-//     Route::prefix('payouts')->group(function () {
-//         Route::get('/', 'User\PayoutController@index')->name('payouts.index');
-//         Route::post('/', 'User\PayoutController@received')->name('payouts.received');
-//     });
-// });
-
-
-
-
-Route::get('/home', 'Member\HomeController@index')->name('home');
-Route::view('my-campaigns', 'member.pages.my-campaigns')->name('my-campaigns');
-Route::view('latest-activity', 'member.pages.latest-activity')->name('latest-activity');
-Route::view('create-idea', 'member.pages.create-idea')->name('create-idea');
-Route::view('create-campaign', 'member.pages.create-campaign')->name('create-campaign');
-Route::view('new-campaign', 'member.pages.new-campaign')->name('new-campaign');
-
-Route::get('/profile', 'UserController@profile')->name('profile');
-Route::get('/edit-profile', 'UserController@update_avatar')->name('edit-profile');
-
-Route::get('idea.my-ideas', 'IdeaController@index')->name('my-ideas');
-Route::get('my-ideas', 'IdeaController@create')->name('my-ideas');
-Route::post('my-ideas', 'IdeaController@store')->middleware('auth');
+    // Route::view('activity', 'user.pages.activity')->name('latest-activity');
+});

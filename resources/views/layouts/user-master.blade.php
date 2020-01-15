@@ -24,11 +24,11 @@
 
 <body>
     {{-- Header --}}
-    @include('member.partials.header')
+    @include('user.partials.header')
 
     @yield('content')
 
-    @include('member.partials.footer')
+    @include('user.partials.footer')
 </body>
 
 </html>

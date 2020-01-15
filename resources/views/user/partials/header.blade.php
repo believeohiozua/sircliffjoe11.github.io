@@ -15,11 +15,11 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('latest-activity') }}">Latest Activity</a>
+                        <a class="nav-link" href="#">Latest Activity</a>
                     </li>
-
+ 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('my-campaigns') }}">My Campaigns</a>
+                        <a class="nav-link" href="{{ route('campaigns.index') }}">My Campaigns</a>
                     </li>
 
                     <li class="nav-item">
@@ -151,10 +151,10 @@
                 <a class="dropdown-item" href="{{ route('profile') }}"><i class="fas fa-user fa-fw" aria-hidden="true"></i>&nbsp; Profile</a>
               </li>
               <li>
-                <a class="dropdown-item" href="{{ route('my-campaigns') }}"><i class="fas fa-credit-card fa-fw" aria-hidden="true"></i>&nbsp; My Campaigns</a>
+                <a class="dropdown-item" href="{{ route('campaigns.index') }}"><i class="fas fa-credit-card fa-fw" aria-hidden="true"></i>&nbsp; My Campaigns</a>
               </li>
               <li>
-                <a class="dropdown-item" href="{{ route('my-ideas') }}"><i class="fas fa-lightbulb fa-fw" aria-hidden="true"></i>&nbsp; Ideas</a>
+                <a class="dropdown-item" href="{{ route('ideas.index') }}"><i class="fas fa-lightbulb fa-fw" aria-hidden="true"></i>&nbsp; Ideas</a>
               </li>
               <li>
                 <a class="dropdown-item" href="{{ route('help') }}"><i class="fas fa-question-circle fa-fw" aria-hidden="true"></i>&nbsp; Help</a>

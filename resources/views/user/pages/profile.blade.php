@@ -1,27 +1,34 @@
-@extends('layouts.member-master')
+@extends('layouts.user-master')
 @section('title', 'Brainstaq | Profile')
 
 
 @section('content')
     <div class="container mb-5" style="width: 1000px" class="mx-auto">
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<div class="card mb-4">
 					<div class="card-body text-center">
 						<img src="{{ asset('frontend/images/cliff.jpg') }}" class="rounded-circle">
-						<h4 class="card-title">@ {{ Auth::user()->username }}</h4>
+						<h3 class="card-title">{{ Auth::user()->name }}</h3>
+						<h5 class="card-title">@ {{ Auth::user()->username }}</h5>
                         <div class="progress" style="height: 10px; width: 100%;">
                                     <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><small>85%</small>
                                     </div>
-                                </div>
-                                <div class="col-md text-right">
-                                    <small class="d-block text-muted" style="font-size: 70%;">My Rating</small>
-                                </div>
+                        </div>
+                            <div class="col-md text-right">
+                                <small class="d-block text-muted" style="font-size: 70%;">My Rating</small>
+                            </div>
 						<p><small>
 							An ideas incubator. A business developer.
 							A Tony Elumelu Entrepreneur and the Creator of Brainstaq!
 							</small> 
 						</p>
+						<div class="d-flex justify-content-center container-fluid">
+							<p class="pr-3" style="font-size: 70%;"><strong>4</strong> Ideas</p>
+							<p class="pr-3" style="font-size: 70%;"><strong>174</strong> Campaigns</p>
+							<p class="pr-3" style="font-size: 70%;"><strong>214</strong> Following</p>
+							<p class="pr-3" style="font-size: 70%;"><strong>14</strong> Followers</p>
+						</div>
 						<p>
 							<a href="#"><i class="fab fa-facebook-square"></i></a>
 							<a href="#"><i class="fab fa-twitter-square"></i></a>
@@ -29,7 +36,7 @@
 							<a href="#"><i class="fab fa-linkedin"></i></a>
 							<a href="#"><i class="fa fa-globe"></i></a>
 						</p>
-                        <span style='cursor:pointer;width:95%;display:inline-flex;margin:5px;'><a href="{{ route('edit-profile') }}" class="btn btn-primary" style='width:100%;'><span class="fa fa-cog"></span> Edit profile</a></span>
+						<span style='cursor:pointer;width:95%;display:inline-flex;margin:5px;'><a href="{{ route('edit') }}" class="btn btn-primary" style='width:100%;'><span class="fa fa-cog"></span> Edit profile</a></span>
 					</div>
 				</div>
 
@@ -48,12 +55,12 @@
 			</div>
 
 			<div class="col">
-				<div class="jumbotron text-center mb-5" style="background-image: url('images/crown.jpg')">
+				<div class="jumbotron text-center mb-5" style="background-image: url('frontend/images/crown.jpg')">
 					<h3 class="display-4">This is a Banner</h3>
 					<p class="lead">And it can be edited</p>
 
 					<hr class="my-4">
-					<a href="{{ route('create-idea') }}"><button class="btn btn-primary btn-lg">Share an Idea</button></a>
+					<a href="{{ route('ideas.create') }}"><button class="btn btn-primary btn-lg">Share an Idea</button></a>
 				</div>
 				
 			    <div class="card-columns">

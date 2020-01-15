@@ -44,11 +44,18 @@
             <!-- Grid column -->
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                 <h6 class="text-uppercase mb-4 font-weight-bold">Community</h6>
-                <p><a href="{{ route('login') }}">Share an Idea</a></p>
-                <p><a href="{{ route('donate') }}">Support an Idea</a></p>
-                <p><a href="{{ route('mentor') }}">Become a Mentor</a></p>
-                <p><a href="{{ route('help') }}">Help</a></p>
-                <p><a href="{{ route('support') }}">Support</a></p>
+                
+                @if (Auth::check())
+                    <p><a href="{{ route('ideas.create') }}">Share an Idea</a></p>
+                    <p><a href="{{ route('donate') }}">Support an Idea</a></p>
+                    <p><a href="{{ route('mentor') }}">Become a Mentor</a></p>
+                @else
+                    <p><a href="{{ route('login') }}">Share an Idea</a></p>
+                    <p><a href="{{ route('login') }}">Support an Idea</a></p>
+                    <p><a href="{{ route('login') }}">Become a Mentor</a></p>
+                @endif
+                    <p><a href="{{ route('help') }}">Help</a></p>
+                    <p><a href="{{ route('support') }}">Support</a></p>
             </div>
             <!-- Grid column -->
 

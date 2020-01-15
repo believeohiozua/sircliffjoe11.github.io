@@ -62,7 +62,7 @@
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link p-1 text-secondary" href="{{ route('campaigns') }}">
+								<a class="nav-link p-1 text-secondary" href="{{ route('campaigns.index') }}">
 									Campaigns
 								</a>
 							</li>

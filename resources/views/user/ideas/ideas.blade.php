@@ -1,11 +1,13 @@
-@extends('layouts.member-master')
-@section('title', 'Brainstaq | My Campaigns')
+@extends('layouts.user-master')
+@section('title', 'Brainstaq | My Ideas')
 
 
 @section('content')
-    <div class="container-fluid mb-5" style="width: 1000px" class="mx-auto">
+
+    <!-- Ideas Categories -->
+	<div class="container-fluid mb-5" style="width: 1000px" class="mx-auto">
 		<div class="d-flex justify-content-between mb-2">
-     			<h3>My <span class="text-primary">Campaigns</span></h3>
+     		<h3>My <span class="text-primary">Ideas</span></h3>
      		<div>
      			<select class="form-control">
      				<option disabled selected>Sort By Categories</option>
@@ -60,26 +62,24 @@
 									Trending
 								</a>
 							</li>
-							<li class="nav-item active">
-								<a class="nav-link p-1 text-secondary" href="{{ route('my-ideas') }}">
-									My Ideas
-								</a>
-							</li>
 						</ul>
 					</div>
 			</div>
 
+			@foreach ($ideas as $idea) 
+			<div class="col-md-9">
+	  		    <div class="card-columns">
+				    <div class="card">
+					    <a href="#"><img src="{{ asset('images/cliff.jpg') }}" class="card-img-top" style="height: 150px; object-fit: cover"></a>
+					    <div class="card-body p-2 position-relative"><a href="#" class="stretched-link"></a>
+						    <strong class="d-block card-title mb-1">{{ $idea->title }}</strong>
+							    <div class="progress mb-1" style="height: 10px; width: 100%;">
+								    <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><small>75%</small>
+								    </div>
+							    </div>
 
-		<div class="col-md-9">
-			<div class="card-columns">
-				<div class="card">
-					<a href="#"><img src="{{ asset('frontend/images/building.jpg') }}" class="card-img-top" style="height: 150px; object-fit: cover"></a>
-
-					<div class="card-body p-2 position-relative"><a href="#" class="stretched-link"></a>
-						    <strong class="d-block card-title mb-1">KobuPlus Gadgets</strong>
 						        <p style="line-height: 1rem; font-size: 80%;" class="nt-1 text-muted">
-							    I found this car on eBay and was the only bidder! The listing was incorrect
-							    and I thought I was buying a peugeot 206.</p>
+							    {{ $idea->description }}</p>
 
 						    <div class="row mt-3 mb-1">
 							    <div class="col-md">
@@ -88,29 +88,30 @@
 							    </div>
 
 							    <div class="col-md text-right">
-								    <small class="d-block text-muted mb-n1 category" style="font-size: 70%;">Technology</small><small class="funds-raised" style="font-weight: bold; font-size:70%; color: green;">N283,560 raised</small>
+								    <small class="d-block text-muted mt-3 my-0" style="font-size: 70%;">Technology</small>
 							    </div>
 						    </div>
-						    <div class="progress mb-1" style="height: 10px; width: 100%;">
-								<div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="25"     aria-valuemin="0" aria-valuemax="100"><small>75%</small>
-								</div>
-							</div>
+					    </div>
+
+					    <div class="d-flex text-center border-top">
+					        <a href="#" class="flex-fill py-2 border-right">
+						        <i class="far fa-thumbs-up"></i><small>13</small>
+					        </a>
+					        <a href="#" class="flex-fill py-2 border-right">
+						        <i class="far fa-thumbs-down"></i><small>3</small>
+					        </a>
+					        <a href="#" class="flex-fill py-2">
+						        <i class="far fa-comments"></i><small>11</small>
+					        </a>
+				        </div>
 				    </div>
-				    <div class="card-footer">
-                        <i class="fas fa-hourglass-end"></i>&nbsp;
-                            <small class="text-muted"> 17 days left</small>
-                        </div>
-		     		</div>
+			    </div>
+			    <div class="row mx-n1 justify-content-center" id="loadMore">
+				    <p><a href="#">View More</a></p>
+			    </div>
+		    </div>	
+	    </div>
+	    @endforeach
 
-				
-				</div>
-
-			
-			<div class="row mx-n1 justify-content-center" id="loadMore">
-				<p><a href="#">View More</a></p>
-			</div>
-		</div>	
-	</div>
-
-<hr>
+<hr class="w-100%">
 @endsection

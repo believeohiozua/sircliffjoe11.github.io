@@ -1,4 +1,4 @@
-@extends('layouts.member-master')
+@extends('layouts.user-master')
 @section('title', 'Brainstaq | Latest Activity')
 
 

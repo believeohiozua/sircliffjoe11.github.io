@@ -1,4 +1,4 @@
-@extends('layouts.member-master')
+@extends('layouts.user-master')
 @section('title', 'Brainstaq | New Campaign')
 
 
@@ -6,7 +6,7 @@
     <div class="container-fluid mb-5" style="width: 1000px" class="mx-auto">
     <h3>Create <span class="text-primary">Campaign</span></h3><br>
 
-    <form method="POST" action="{{ route('new-campaign') }}">
+    <form method="POST" action="{{ route('campaings.create') }}">
         <div class="form-group">
             <label for="campaign-title" style="font-weight: bold;">Enter the title of your campaign</label>
             <input type="text" class="form-control" id="campaign-title" maxlength="25" aria-describedby="campaign-title" placeholder="Campaign Title">
