@@ -10,13 +10,14 @@
   <link rel="shortcut icon" href="assets/img/logo.png">
 
   <link href="assets/css/compiled-4.11.0.min.css" rel="stylesheet">
-  <link href="assets/css/bootstrap.css" rel="stylesheet">
-  <link href="assets/css/custom.css" rel="stylesheet">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
   <link href="assets/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="assets/css/custom.css" rel="stylesheet">
 </head>
 
-<body id="signup-page-body">
+<body id="page-body">
 
   <!-- Navbar -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
@@ -35,9 +36,10 @@
       </div>
 
       <!-- Collapse -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler btn-primary btn-xs white-text" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation" style="border-radius: 25px;">
+        Sign In
       </button>
 
       <!-- Links -->
@@ -55,15 +57,17 @@
 
         <!-- Right -->
         <ul class="navbar-nav nav-flex-icons" id="nav-login-form">
-          <li class="nav-item pr-2">
-            <input type="text" placeholder=" Phone or Email " name="">
-          </li>
-          <li class="nav-item pr-2">
-            <input type="password" placeholder=" password " name="">
-          </li>
-          <li class="nav-item">
-            <button type="submit" class="btn-danger btn-xs">Log in</button>
-          </li>
+          <form class="row pl-5">
+            <li class="nav-item pr-2">
+              <input type="text" placeholder=" Phone or Email " name="">
+            </li>
+            <li class="nav-item pr-2">
+              <input type="password" placeholder=" password " name="">
+            </li>
+            <li class="nav-item">
+              <button type="submit" class="btn-danger btn-xs">Log in</button>
+            </li>
+          </form>
           <li class="nav-item">
             <a class="nav-link waves-effect" href="#">
             </a>
@@ -76,7 +80,7 @@
     </div>
   </nav>
 
-  <section class="container-fluid pl-3">
+  <section class="container-fluid pl-3" id="section-loginpage">
     <!-- Navbar -->
     <div>
       <div class="row">
